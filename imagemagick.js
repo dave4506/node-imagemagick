@@ -21,7 +21,9 @@ function exec2(file, args /*, options, callback */) {
     }
   }
 
-  var child = childproc.spawn(file, args);
+  var child = childproc.spawn(file, args, {
+    shell: true,
+  });
   var killed = false;
   var timedOut = false;
 
